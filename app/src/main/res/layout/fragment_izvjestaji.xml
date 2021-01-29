@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".IzvjestajiFragment">
+
+    <RelativeLayout
+        android:id="@+id/rep_zaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rep_Selectors"
+        >
+        <RelativeLayout
+            android:id="@+id/prvi"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/natrag"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_nav_back"/>
+
+            <TextView
+                android:id="@+id/naslov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:text="Izvještaji"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:layout_toLeftOf="@id/ic"
+                android:layout_toEndOf="@id/natrag"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circlebackground"
+                android:src="@drawable/ic_generate_report"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:elevation="5dp"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/prvi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/waves">
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rep_Selectors"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/rep_zaglavlje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0"
+        >
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/repTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/backgroundcolor"
+        android:foregroundTint="?attr/colorPrimaryDark"
+        app:tabBackground="?attr/backgroundcolor"
+        app:tabIconTint="@color/colorPrimaryDark"
+        app:tabIndicatorColor="?attr/colorAccent"
+        app:tabRippleColor="?attr/colorAccent"
+        app:tabSelectedTextColor="?attr/colorAccent"
+        app:tabTextColor="?attr/colorPrimaryDark">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/planRep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#4CAF50"
+            android:text="O prihodima" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/intervalRep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="o Troškovima" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/compRep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usporedni" />
+    </com.google.android.material.tabs.TabLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/repBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/podnozje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rep_Selectors"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/intPickStart"
+            android:textColor="?attr/colorPrimaryDark"
+            android:layout_margin="5dp"
+            app:helperText="Odaberite početni datum"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorAccent"
+            app:helperTextTextColor="?attr/colorPrimaryDark"
+            app:errorEnabled="true"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_date_picker"
+            app:endIconTint="?attr/colorPrimaryDark">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="Početni datum"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:id="@+id/startInput"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/intPickStart"
+            android:id="@+id/intPickEnd"
+            android:textColor="?attr/colorPrimaryDark"
+            android:layout_margin="5dp"
+            app:helperText="Odaberite završni datum"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorAccent"
+            app:helperTextTextColor="?attr/colorPrimaryDark"
+            app:errorEnabled="true"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_date_picker"
+            app:endIconTint="?attr/colorPrimaryDark">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="Završni datum"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:id="@+id/endInput"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/podnozje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="1">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/generirajIzvjestaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:elevation="10dp"
+            android:fontFamily="@font/playfair_display"
+            android:text="Generiraj"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DodajFragment">
+
+    <RelativeLayout
+        android:id="@+id/group_zaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/group_podatci"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0"
+        >
+        <RelativeLayout
+            android:id="@+id/prvi"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/natrag"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_nav_back"/>
+
+            <TextView
+                android:id="@+id/naslov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:text="Grupe"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:layout_toLeftOf="@id/ic"
+                android:layout_toEndOf="@id/natrag"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circlebackground"
+                android:src="@drawable/ic_add_group"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:elevation="5dp"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/prvi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/waves">
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/group_podatci"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/podnozje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/group_zaglavlje">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerGroups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbtnDodaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4F4CAF50"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_add_group"
+            app:backgroundTint="?attr/colorPrimaryDark"
+            android:background="?attr/colorPrimary"
+            app:borderWidth="2dp"
+            app:elevation="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            app:tint="?attr/colorPrimaryDark" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/podnozje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/group_podatci"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="1">
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

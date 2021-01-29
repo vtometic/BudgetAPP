@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "485280271417",
+    "firebase_url": "https://zavrsniapp.firebaseio.com",
+    "project_id": "zavrsniapp",
+    "storage_bucket": "zavrsniapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485280271417:android:e42a52ded8c9b9513791e8",
+        "android_client_info": {
+          "package_name": "com.example.zavrsniapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485280271417-5qspnnf5l0u4i5p07kk0ske5ul3qns3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zavrsniapp",
+            "certificate_hash": "39b1538c60c961ef94f36d27d13d45627fede771"
+          }
+        },
+        {
+          "client_id": "485280271417-nvrrracv6q696v3imaf18lljhmjm26cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMcyyfkySi67LcwN1z6V4zDnQyjupUTKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485280271417-nvrrracv6q696v3imaf18lljhmjm26cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

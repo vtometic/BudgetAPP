@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemGtupa"
+    android:background="@drawable/card"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nazivGrupe"
+        android:text="Režije"
+        android:textSize="25sp"
+        android:textColor="?attr/textcolor"
+        android:textStyle="bold"
+        android:fontFamily="@font/playfair_display"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/svojstvoGrupe"
+        android:text="Troškovi"
+        android:textSize="20sp"
+        android:textColor="?attr/textcolor"
+        android:fontFamily="@font/playfair_display"
+        android:layout_alignParentEnd="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/opisGrupe"
+        android:text="Struja, voda, internet, telefon"
+        android:textSize="20sp"
+        android:textColor="?attr/textcolor"
+        android:fontFamily="@font/playfair_display"
+        android:layout_below="@id/nazivGrupe"
+        />
+
+</RelativeLayout>

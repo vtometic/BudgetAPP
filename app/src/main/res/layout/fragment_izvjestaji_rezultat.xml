@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".IzvjestajiFragment">
+
+    <RelativeLayout
+        android:id="@+id/rep_zaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scrollGrafovi"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed"
+        >
+        <RelativeLayout
+            android:id="@+id/prvi"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/zatvori"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close"/>
+
+            <TextView
+                android:id="@+id/naslov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:text="Izvještaji"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:layout_toLeftOf="@id/ic"
+                android:layout_toEndOf="@id/zatvori"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circlebackground"
+                android:src="@drawable/ic_generate_report"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:elevation="5dp"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/prvi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/waves">
+        </RelativeLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/scrollGrafovi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rep_zaglavlje">
+    <RelativeLayout
+        android:id="@+id/grafoviBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/overallLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/card"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/overallNaslov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/playfair_display"
+                android:text="Ukupno"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/overallCmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/overallNaslov"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pieOverall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:text="Pie Chart"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorAccent"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/barOverall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/pieOverall"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:text="BarChart"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/radarOverall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/barOverall"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:text="Radar Chart"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/oPieChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/overallCmd"
+                android:layout_alignParentStart="true"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/oBarChart"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/overallCmd"/>
+
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/oRadarChart"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/overallCmd"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/poDatumima"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:layout_below="@id/overallLayout"
+            android:layout_margin="5dp"
+            android:background="@drawable/card"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/datesNaslov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/playfair_display"
+                android:text="Po datumima"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/poDatumimaCmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datesNaslov"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lineChartCmd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:text="LineChart"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorAccent"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/groupedBarChartCmd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_toEndOf="@id/lineChartCmd"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:text="GroupedBarChart"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/poDatumimaCmd"
+                />
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/groupedBarChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/poDatumimaCmd"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

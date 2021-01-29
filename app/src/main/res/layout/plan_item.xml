@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/valItem"
+    android:layout_marginBottom="5dp"
+    android:padding="5dp"
+    android:elevation="5dp">
+    <TextView
+        android:id="@+id/valNaziv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hrvatska kuna"
+        android:textSize="20sp"
+        android:textColor="?attr/textcolor"
+        android:fontFamily="@font/playfair_display"/>
+    <TextView
+        android:id="@+id/valOznaka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kn"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:textColor="?attr/textcolor"
+        android:fontFamily="@font/playfair_display"
+        android:layout_toRightOf="@id/valNaziv"
+        android:gravity="end"/>
+</RelativeLayout>

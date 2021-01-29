@@ -1,0 +1,17 @@
+
+    <CheckedTextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/text1"
+        android:singleLine="true"
+        android:background="?attr/backgroundcolor"
+        android:textSize="20sp"
+        android:textColor="?attr/colorPrimaryDark"
+        android:fontFamily="@font/playfair_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        />

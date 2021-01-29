@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PocetnaFragment"
+    android:background="?attr/backgroundcolor"
+    app:layout_constraintVertical_chainStyle="packed"
+    app:layout_constraintVertical_bias="0">
+
+    <RelativeLayout
+        android:id="@+id/poc_zaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toTopOf="@id/Scr"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <RelativeLayout
+            android:id="@+id/prvi"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/naslov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:text="Početna"
+                android:textColor="?attr/colorPrimaryDark"
+                android:fontFamily="@font/playfair_display"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/prvi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/waves"
+            >
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/Scr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poc_zaglavlje">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/nav_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/nav_plan"
+                app:layout_constraintEnd_toStartOf="@id/nav_settings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    app:cardCornerRadius="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_profile"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profil"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Informacije o korisniku, uređivanje podataka"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/nav_profile"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/nav_addgroup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/nav_profile"
+                app:layout_constraintTop_toBottomOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/settings"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    ,<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Postavke"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Odabir valute, promjena teme..."
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_plan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nav_profile"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/nav_report"
+                app:layout_constraintEnd_toStartOf="@id/nav_addgroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nav_profile">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/plan"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    app:cardCornerRadius="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_create_plan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Planovi"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kreiraj svoj tjedni, mjesečni ili godišnji plan potrošnje"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_addgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nav_settings"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/nav_plan"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/nav_newic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/nav_plan"
+                app:layout_constraintTop_toBottomOf="@id/nav_settings">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/group"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_add_group" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Grupe"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kreraj i upravljaj grupama prihoda ili troškova"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nav_plan"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/nav_newic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nav_plan">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/report"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    app:cardCornerRadius="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_generate_report" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Izvještaji"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kreiraj svoj tjedni, mjesečni ili godišnji izvještaj"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/nav_newic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nav_addgroup"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/nav_report"
+                android:background="@drawable/card"
+                android:clipToPadding="false"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/nav_report"
+                app:layout_constraintTop_toBottomOf="@id/nav_addgroup">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/newic"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:backgroundTint="?attr/backgroundcolor"
+                            android:background="@drawable/circlebackground"
+                            android:src="@drawable/ic_add_newic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dodaj"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dodaj nedavno nastali trošak ili prihod"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorPrimaryDark"
+                            android:fontFamily="@font/playfair_display"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

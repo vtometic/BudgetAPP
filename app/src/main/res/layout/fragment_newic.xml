@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    tools:context=".NewicFragment">
+
+    <RelativeLayout
+        android:id="@+id/newic_zaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/prvi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary">
+
+            <ImageView
+                android:id="@+id/natrag"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_nav_back" />
+
+            <TextView
+                android:id="@+id/naslov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_toLeftOf="@id/ic"
+                android:layout_toEndOf="@id/natrag"
+                android:fontFamily="@font/playfair_display"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Dodaj Stavku"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/circlebackground"
+                android:elevation="5dp"
+                android:src="@drawable/ic_add_newic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/prvi"
+            android:background="@drawable/waves"></RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/podatciNewic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newic_zaglavlje">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/datePickerNewic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textColorHint="?attr/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:padding="1dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:errorEnabled="true"
+            android:fontFamily="@font/playfair_display"
+            app:hintTextColor="?attr/colorAccent"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorAccent"
+            app:endIconDrawable="@drawable/ic_date_picker"
+            app:endIconMode="custom"
+            app:endIconTint="?attr/colorPrimaryDark"
+            app:helperText="Odaberite datum"
+            app:helperTextTextColor="?attr/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="gravity"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:fontFamily="@font/playfair_display"
+                android:textColor="?attr/colorPrimaryDark"
+                android:hint="Datum"
+                android:clickable="true"
+                android:focusable="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNazivNewic"
+            android:layout_below="@id/datePickerNewic"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textColorHint="?attr/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:padding="1dp"
+            android:fontFamily="@font/playfair_display"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:errorEnabled="true"
+            app:hintTextColor="?attr/colorAccent"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorAccent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="gravity"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:fontFamily="@font/playfair_display"
+                android:textColor="?attr/colorPrimaryDark"
+                android:hint="Unesite naziv stavke..."/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtIznosNewic"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryDark"
+            android:layout_below="@id/txtNazivNewic"
+            android:textColorHint="?attr/colorPrimaryDark"
+            app:hintTextColor="?attr/colorAccent"
+            android:gravity="center_vertical"
+            android:padding="1dp"
+            android:fontFamily="@font/playfair_display"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorAccent"
+            app:errorEnabled="true"
+            app:helperText="Npr 155.50"
+            app:helperTextTextColor="?attr/colorPrimaryDark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="gravity"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:fontFamily="@font/playfair_display"
+                android:textColor="?attr/colorPrimaryDark"
+                android:hint="Iznos" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/spinnerLayoutGrupa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtIznosNewic"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/spinner_background"
+            android:orientation="horizontal"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp">
+
+            <Spinner
+                android:id="@+id/spinnerGrupeNewic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/playfair_display"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="match_parent"
+                android:dropDownSelector="@drawable/ic_next"
+                android:textSize="20sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:scrollbars="vertical" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+    android:id="@+id/planComands"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/podatciNewic"
+    app:layout_constraintVertical_bias="0"
+    app:layout_constraintVertical_chainStyle="packed">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dodajNewic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj"
+        android:layout_marginEnd="10dp"
+        android:textSize="20sp"
+        android:elevation="10dp"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/playfair_display"
+        android:textColor="?attr/colorPrimaryDark"
+        android:layout_margin="5dp"/>
+</RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

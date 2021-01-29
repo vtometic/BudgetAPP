@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogGrupa"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".DodajFragment">
+
+    <RelativeLayout
+        android:id="@+id/adgZaglavlje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <RelativeLayout
+            android:id="@+id/adgPrvi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/adgNaslov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/playfair_display"
+                android:text="Odaberite datum"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/adgDrugi"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/adgPrvi"
+            android:background="@drawable/waves"></RelativeLayout>
+    </RelativeLayout>
+
+    <CalendarView
+        android:id="@+id/calendarDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/backgroundcolor"
+        android:dateTextAppearance="@style/CalendarText"
+        android:firstDayOfWeek="2"
+        android:focusedMonthDateColor="?attr/colorPrimaryDark"
+        android:scrollbarThumbHorizontal="?attr/colorPrimaryDark"
+        android:scrollbarThumbVertical="?attr/colorPrimaryDark"
+        android:selectedWeekBackgroundColor="?attr/colorPrimary"
+        android:showWeekNumber="false"
+        android:theme="@style/CalendarText"
+        android:unfocusedMonthDateColor="?attr/colorPrimaryDark"
+        android:weekDayTextAppearance="@style/CalendarText"
+        android:weekNumberColor="?attr/colorPrimaryDark"
+        android:weekSeparatorLineColor="?attr/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adgZaglavlje"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <RelativeLayout
+        android:id="@+id/pickerCmdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendarDialog">
+
+        <TextView
+            android:id="@+id/dialogOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/playfair_display"
+            android:text="Ok"
+            android:textAlignment="center"
+            android:textColor="?attr/colorPrimaryDark"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
